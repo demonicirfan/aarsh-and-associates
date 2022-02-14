@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Center } from '@chakra-ui/react';
 import React from 'react';
 
 const Button = () => {
@@ -9,8 +9,15 @@ const Button = () => {
       bg="brand.200"
       maxW={'fit-content'}
       fontSize={{ base: 'sm', lg: 'md' }}
+      _hover={{
+        bg: '#DCA300',
+      }}
+      onClick={e => {
+        window.location = 'mailto:aarsh.asso@gmail.com';
+        e.preventDefault();
+      }}
     >
-      Button
+      <Center minW={'6rem'}>Contact Us</Center>
     </Box>
   );
 };

@@ -1,4 +1,13 @@
-import { Center, Heading, Image, Text, VStack, Wrap } from '@chakra-ui/react';
+import {
+  Center,
+  Heading,
+  Image,
+  ListItem,
+  Text,
+  UnorderedList,
+  VStack,
+  Wrap,
+} from '@chakra-ui/react';
 import React, { useEffect, useRef } from 'react';
 import One from '../Images/one.png';
 import Two from '../Images/two.png';
@@ -13,34 +22,44 @@ const MotionVStack = motion(VStack);
 
 const Data = [
   {
-    title: 'Start my Business',
-    body: 'Considering registrations company in India and that too in a fast and hassle-free',
+    title: 'Auditing Services',
+    points: [
+      'Internal Audit',
+      'Statutory Audit',
+      'Income Tax Audit',
+      'GST Audit',
+      'All types of Bank Audit',
+    ],
     img: One,
   },
   {
-    title: 'Business and Tax Registration',
-    body: 'In the era of globalization entrepreneurship is the need of the',
+    title: 'Income Tax Services',
+    points: [
+      'Income Tax Return for Individual, HUF, Partnership Firms, LLPs/ AOPs, & Companies',
+      'Income Tax Notice Reply',
+      'Appeal Filing',
+      'Refund of Income Tax',
+      'Litigation/ Representation & Other matters',
+    ],
     img: Two,
   },
   {
-    title: 'GST',
-    body: 'GST is a huge reform in India post-independence',
+    title: 'Business set up services',
+    points: [
+      'Incorporation of all types of Companies & LLPs.',
+      'Annual Filing of Companies/ LLPs and other compliances with ROC',
+      'Representations before the MCA authorities for any notices issued, or otherwise. ',
+      'Conversion of Private limited company to LLP.',
+    ],
     img: Three,
   },
   {
-    title: 'Intellectual property Rights',
-    body: 'A trademark is typically a name, word. phrase symbol design image.',
+    title: 'Indirect Tax Services',
+    points: [
+      'GST/VAT Registration',
+      'Monthly/ Quarterly/ Annual Filing of GST Returns',
+    ],
     img: Four,
-  },
-  {
-    title: 'Startup Advisory',
-    body: 'We understand that for  a startup the primary focus is to grow now',
-    img: Five,
-  },
-  {
-    title: 'Foreign Investment in India',
-    body: 'Foreign investment in India is primarily regulated by the FDI policy',
-    img: Six,
   },
 ];
 
@@ -68,22 +87,26 @@ const Services = () => {
           textAlign="center"
           fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }}
         >
-          We are committed to delivering top Quality Financial Services
+          Our Services
         </Heading>
         <Text
           textAlign="center"
           maxW="2xl"
           px="1rem"
-          fontSize={{ base: 'xs', md: 'sm' }}
+          fontSize={{ base: 'sm', md: 'md' }}
           fontWeight={'300'}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-          purus sit amet luctus venenatis, lectus magna fringilla urna,
-          porttitor rhoncus dolor purus non enim
+          M/s{' '}
+          <Text as="span" fontWeight="400">
+            A A R S H & Associates
+          </Text>
+          , Chartered Accountants has emerged as a specialized legal and
+          taxation firm providing a wide range of services to our clients with a
+          motive of fulfilling every requirement of our clients
         </Text>
       </MotionCenter>
       <Wrap
-        spacing={['4', '5', '6']}
+        spacing={['4', '6', '8']}
         mx="auto"
         justify={'center'}
         align="center"
@@ -94,8 +117,9 @@ const Services = () => {
             bg="white"
             p="2rem 1.8rem "
             alignItems={'start'}
-            spacing="0.8rem"
-            minH={{ base: '14rem', lg: '16rem' }}
+            spacing="1rem"
+            minH={{ base: '24rem', md: '24rem', lg: '24rem' }}
+            minW={{ base: '16rem', md: '18rem', lg: '24rem' }}
             initial={{ opacity: 0, y: 40 }}
             animate={{
               opacity: 1,
@@ -107,13 +131,15 @@ const Services = () => {
             <Text fontWeight={'500'} fontSize={{ base: 'sm', lg: 'md' }}>
               {card.title}
             </Text>
-            <Text
+            <UnorderedList
               fontWeight={'300'}
               fontSize={{ base: 'xs', lg: 'sm' }}
               maxW={{ base: '12rem', lg: '14rem', xl: '18rem' }}
             >
-              {card.body}
-            </Text>
+              {card.points.map(point => (
+                <ListItem mx="0.6rem">{point}</ListItem>
+              ))}
+            </UnorderedList>
           </MotionVStack>
         ))}
       </Wrap>

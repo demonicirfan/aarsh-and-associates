@@ -4,6 +4,7 @@ import {
   VStack,
   HStack,
   Text,
+  Center,
   Drawer,
   DrawerBody,
   DrawerFooter,
@@ -13,21 +14,33 @@ import {
   DrawerCloseButton,
   useDisclosure,
 } from '@chakra-ui/react';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { RiMenu4Line } from 'react-icons/ri';
 import Button from './Button';
 import Logo from './Logo';
 
-const Navbar = () => {
+const Navbar = props => {
+  const [newFinalFocusRef, setNewFinalFocusRef] = useState('');
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const scrollToDiv = ref => window.scrollTo(0, ref.current.offsetTop);
   const btnRef = React.useRef();
+
   return (
     <Container maxW="8xl" bg="brand.300" color="white">
       <HStack justifyContent={'space-between'} p={'1rem'}>
         <Logo />
-        <HStack spacing="2rem" display={{ base: 'none', lg: 'flex' }}>
-          <Text>AboutUs</Text>
-          <Text>ContactUs</Text>
+        <HStack
+          spacing="2rem"
+          display={{ base: 'none', lg: 'flex' }}
+          fontWeight="500"
+          fontSize={'md'}
+        >
+          <Box as="button" onClick={() => scrollToDiv(props.aboutReference)}>
+            <Center minW={'6rem'}>About Us</Center>
+          </Box>
+          <Box as="button" onClick={() => scrollToDiv(props.contactReference)}>
+            <Center minW={'6rem'}>Contact Us</Center>
+          </Box>
           <Button />
         </HStack>
         <Box
@@ -42,27 +55,33 @@ const Navbar = () => {
           isOpen={isOpen}
           placement="right"
           onClose={onClose}
-          finalFocusRef={btnRef}
+          finalFocusRef={newFinalFocusRef}
         >
           <DrawerOverlay />
           <DrawerContent bg="#EBC351">
             <DrawerCloseButton m="0.5rem" />
             <DrawerBody>
-              <VStack
-                spacing="1.8rem"
-                my="4rem"
-                alignItems={'right'}
-                color={'black'}
-                fontWeight="500"
+              <Box
+                as="button"
+                onClick={() => {
+                  setNewFinalFocusRef(props.aboutReference);
+                  onClose();
+                  scrollToDiv(props.aboutReference);
+                }}
               >
-                <Text>About Us</Text>
-                <Text>Contact Us</Text>
-                <Box w="fit-content" p="0.4rem 0.8rem" bg="white">
-                  Button
-                </Box>
-              </VStack>
+                <Center minW={'6rem'}>About Us</Center>
+              </Box>
+              <Box
+                as="button"
+                onClick={() => {
+                  setNewFinalFocusRef(props.contactReference);
+                  onClose();
+                  scrollToDiv(props.contactReference);
+                }}
+              >
+                <Center minW={'6rem'}>Contact Us</Center>
+              </Box>
             </DrawerBody>
-
             <DrawerFooter>
               <Logo />
             </DrawerFooter>

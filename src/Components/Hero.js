@@ -52,21 +52,20 @@ const Hero = () => {
           overflow="none"
         >
           <Heading
-            fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '7xl' }}
-            letterSpacing="-1"
-            lineHeight={'short'}
+            fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '70px' }}
+            letterSpacing="-2"
+            lineHeight={'shorter'}
             //  w={'clamp(20rem, 80vw, 46rem)'}
             //  maxW="fit-content"
           >
-            Lorem ipsum dolor sit amet sectetur adipiscing{' '}
+            Charted Accountancy and Business Advisory Firm
           </Heading>
           <Text
             fontSize={{ base: 'sm', md: 'md' }}
             fontWeight={{ base: '300', md: '400' }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-            purus sit amet luctus venenatis, lectus magna fringilla urna,
-            porttitor rhoncus dolor purus non enim
+            Chandigarh based Chartered Accountancy Firm providing a multitude of
+            tax, accounting and legal advisory services.
           </Text>
           <Button />
         </VStack>
