@@ -22,13 +22,13 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (
-    <Container maxW="8xl">
+    <Container maxW="8xl" bg="brand.300" color="white">
       <HStack justifyContent={'space-between'} p={'1rem'}>
         <Logo />
         <HStack spacing="2rem" display={{ base: 'none', lg: 'flex' }}>
           <Text>AboutUs</Text>
           <Text>ContactUs</Text>
-          <Box>Button</Box>
+          <Button />
         </HStack>
         <Box
           display={{ base: 'block', lg: 'none' }}
@@ -49,15 +49,17 @@ const Navbar = () => {
             <DrawerCloseButton m="0.5rem" />
             <DrawerBody>
               <VStack
-                spacing="2rem"
+                spacing="1.8rem"
                 my="4rem"
                 alignItems={'right'}
                 color={'black'}
-                fontWeight="700"
+                fontWeight="500"
               >
                 <Text>About Us</Text>
                 <Text>Contact Us</Text>
-               <Button />
+                <Box w="fit-content" p="0.4rem 0.8rem" bg="white">
+                  Button
+                </Box>
               </VStack>
             </DrawerBody>
 

@@ -5,11 +5,14 @@ import {
   Text,
   Link,
   VStack,
-  Code,
+  Center,
   Grid,
 } from '@chakra-ui/react';
 import NavBar from './Components/Navbar';
 import theme from './Theme';
+import Hero from './Components/Hero';
+import Services from './Components/Services';
+import Footer from './Components/Footer';
 
 export const newTheme = {
   ...theme,
@@ -20,7 +23,14 @@ export const newTheme = {
 function App() {
   return (
     <ChakraProvider theme={newTheme}>
-      <NavBar />
+      <Center w="full" bg="brand.300" flexDirection="column">
+        <NavBar />
+        <Hero />
+      </Center>
+      <Center maxW="8xl" mx="auto">
+        <Services />
+      </Center>
+      <Footer />
     </ChakraProvider>
   );
 }

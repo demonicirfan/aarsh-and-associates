@@ -8,10 +8,10 @@ const config = {
 const theme = extendTheme({
   config,
   colors: {
-    attire: {
-      1: '#ffffff',
-      2: '#626365',
-      3: '#929292',
+    brand: {
+      100: '#FAFAFA',
+      200: '#EBC351',
+      300: '#03233A',
       4: '#C7EDE4',
       5: '#000000',
     },
@@ -23,8 +23,8 @@ const theme = extendTheme({
     global: {
       'html, body': {
         // fontFamily: 'sans',
-        background: '#626365',
-        color: '#626365',
+        background: '#FAFAFA',
+        color: '#0A0A0A',
       },
     },
   },
