@@ -58,7 +58,7 @@ const Hero = () => {
             //  w={'clamp(20rem, 80vw, 46rem)'}
             //  maxW="fit-content"
           >
-            Charted Accountancy and Business Advisory Firm
+            Chartered Accountancy and Business Advisory Firm
           </Heading>
           <Text
             fontSize={{ base: 'sm', md: 'md' }}

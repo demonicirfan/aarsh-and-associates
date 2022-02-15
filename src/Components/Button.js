@@ -17,7 +17,9 @@ const Button = () => {
         e.preventDefault();
       }}
     >
-      <Center minW={'6rem'}>Contact Us</Center>
+      <Center minW={'6rem'} color="brand.300" fontWEight="500">
+        <a href="mailto:aarsh.asso@gmail.com">Email</a>
+      </Center>
     </Box>
   );
 };

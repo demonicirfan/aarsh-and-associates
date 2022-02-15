@@ -28,7 +28,7 @@ export const newTheme = {
 };
 
 function App() {
-  const [readMore, setReadMore] = React.useState(0);
+  const [readMore, setReadMore] = React.useState(1);
 
   const aboutUsRef = React.useRef();
   const contactUsRef = React.useRef();
@@ -42,14 +42,8 @@ function App() {
       <Center maxW="8xl" mx="auto">
         <Services />
       </Center>
-      <AboutUS />
-      <Center
-        ref={aboutUsRef}
-        flexDirection={'column'}
-        bg={'brand.300'}
-        color="white"
-        w="100%"
-      >
+      <AboutUS reference={aboutUsRef} />
+      <Center flexDirection={'column'} bg={'brand.300'} color="white" w="100%">
         <Stack
           direction={{ base: 'column', md: 'row' }}
           py={'4rem'}

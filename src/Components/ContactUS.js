@@ -38,14 +38,18 @@ const ContactUS = props => {
         <HStack px={'1.5rem'} w="fit-content">
           <Image h={{ base: '2rem', md: '4rem' }} src={Location} />
           <Text fontSize={{ base: 'sm', md: 'md' }}>
-            Location - 3317, 19D,
-            <br /> Sector 19, Chandigarh, 160019
+            <a href="https://goo.gl/maps/UgszV4ADNKyKXpa98">
+              Location - #3317, Sector 19D,
+              <br /> Chandigarh, 160019
+            </a>
           </Text>
         </HStack>
         <HStack px={'1.5rem'} w="fit-content">
           <Image h={{ base: '2rem', md: '4rem' }} src={Mail} />
           <Text fontSize={{ base: 'sm', md: 'md' }}>
-            Email - aarsh.asso@gmail.com
+            <a href="mailto:aarsh.asso@gmail.com">
+              Email - aarsh.asso@gmail.com
+            </a>
           </Text>
         </HStack>
       </Wrap>

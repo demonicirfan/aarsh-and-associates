@@ -6,7 +6,7 @@ import {
   Stack,
   VisuallyHidden,
 } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import Logo from './Logo';
 
 const SocialButton = ({ children, label, href }) => {
@@ -55,14 +55,29 @@ export default function Footer() {
           Developed by Irfan Asif
         </Link>
         <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Twitter'} href={'#'}>
+          <SocialButton
+            label={'Twitter'}
+            href={'https://twitter.com/RachitGoyalChd'}
+          >
             <FaTwitter />
           </SocialButton>
-          <SocialButton label={'YouTube'} href={'#'}>
-            <FaYoutube />
+          <SocialButton
+            label={'Facebook'}
+            href={'https://www.facebook.com/carachitgoyal'}
+          >
+            <FaFacebook />
           </SocialButton>
-          <SocialButton label={'Instagram'} href={'#'}>
+          <SocialButton
+            label={'Instagram'}
+            href={'https://instagram.com/ca.rachit_goyal?utm_medium=copy_link'}
+          >
             <FaInstagram />
+          </SocialButton>
+          <SocialButton
+            label={'Linkedin'}
+            href={'https://www.linkedin.com/in/rachit-goyal-69a70b1aa'}
+          >
+            <FaLinkedin />
           </SocialButton>
         </Stack>
       </Container>

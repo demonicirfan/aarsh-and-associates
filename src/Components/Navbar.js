@@ -1,20 +1,17 @@
 import {
   Box,
   Container,
-  VStack,
   HStack,
-  Text,
   Center,
   Drawer,
   DrawerBody,
   DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
 } from '@chakra-ui/react';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { RiMenu4Line } from 'react-icons/ri';
 import Button from './Button';
 import Logo from './Logo';
@@ -36,10 +33,10 @@ const Navbar = props => {
           fontSize={'md'}
         >
           <Box as="button" onClick={() => scrollToDiv(props.aboutReference)}>
-            <Center minW={'6rem'}>About Us</Center>
+            <Center minW={'6rem'}>About us</Center>
           </Box>
           <Box as="button" onClick={() => scrollToDiv(props.contactReference)}>
-            <Center minW={'6rem'}>Contact Us</Center>
+            <Center minW={'6rem'}>Contact us</Center>
           </Box>
           <Button />
         </HStack>
@@ -60,7 +57,14 @@ const Navbar = props => {
           <DrawerOverlay />
           <DrawerContent bg="#EBC351">
             <DrawerCloseButton m="0.5rem" />
-            <DrawerBody>
+            <DrawerBody
+              display={'flex'}
+              flexDirection="column"
+              alignItems={'center'}
+              mt="4rem"
+              fontSize="xl"
+              gap="2rem"
+            >
               <Box
                 as="button"
                 onClick={() => {
@@ -69,7 +73,7 @@ const Navbar = props => {
                   scrollToDiv(props.aboutReference);
                 }}
               >
-                <Center minW={'6rem'}>About Us</Center>
+                <Center minW={'6rem'}>About us</Center>
               </Box>
               <Box
                 as="button"
@@ -79,7 +83,7 @@ const Navbar = props => {
                   scrollToDiv(props.contactReference);
                 }}
               >
-                <Center minW={'6rem'}>Contact Us</Center>
+                <Center minW={'6rem'}>Contact us</Center>
               </Box>
             </DrawerBody>
             <DrawerFooter>
