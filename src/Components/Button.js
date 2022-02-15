@@ -1,7 +1,7 @@
 import { Box, Center } from '@chakra-ui/react';
 import React from 'react';
 
-const Button = () => {
+const Button = props => {
   return (
     <Box
       as="button"
@@ -18,7 +18,7 @@ const Button = () => {
       }}
     >
       <Center minW={'6rem'} color="brand.300" fontWEight="500">
-        <a href="mailto:aarsh.asso@gmail.com">Email</a>
+        <a href="mailto:aarsh.asso@gmail.com">{props.title}</a>
       </Center>
     </Box>
   );

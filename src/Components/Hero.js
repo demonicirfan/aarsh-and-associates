@@ -46,6 +46,7 @@ const Hero = () => {
       >
         <VStack
           spacing={{ base: '1rem', lg: '2rem' }}
+          pl="1rem"
           alignItems={'left'}
           m="auto"
           maxW={'clamp(20rem,80vw, 46rem)'}
@@ -63,11 +64,12 @@ const Hero = () => {
           <Text
             fontSize={{ base: 'sm', md: 'md' }}
             fontWeight={{ base: '300', md: '400' }}
+            maxW={'clamp(16rem ,60vw, 36rem)'}
           >
             Chandigarh based Chartered Accountancy Firm providing a multitude of
             tax, accounting and legal advisory services.
           </Text>
-          <Button />
+          <Button title="Reach us" />
         </VStack>
       </MotionCenter>
 

@@ -38,7 +38,7 @@ const Navbar = props => {
           <Box as="button" onClick={() => scrollToDiv(props.contactReference)}>
             <Center minW={'6rem'}>Contact us</Center>
           </Box>
-          <Button />
+          <Button title='Email'/>
         </HStack>
         <Box
           display={{ base: 'block', lg: 'none' }}
